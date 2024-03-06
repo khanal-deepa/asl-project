@@ -11,6 +11,9 @@ import subprocess
 # Create your views here.
 
 
+def homepage(request):
+    return render(request, 'frontend.html')
+
 def index(request):
     return render(request, 'users/index.html')
 
