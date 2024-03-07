@@ -48,9 +48,20 @@
                             <li class="menu-item">
                                 <a href="{% url 'home' %}">Home</a>
                             </li>
+
+                            {% if request.user.is_authenticated %}
                             <li class="menu-item">
-                                <a href="{% url 'login' %}">Start Test</a>
+                                <a href="{% url 'start_test' %}">Start Test</a>
                             </li>
+                            <li class="menu-item">
+                                <a href="{% url 'logout' %}">Logout</a>
+                            </li>
+
+                            {% else %}
+                            <li class="menu-item">
+                                <a href="{% url 'login' %}">Login/Register</a>
+                            </li>
+                            {% endif %}
                             <!-- <li class="menu-item">
                                 <a href="about.html">Team</a>
                             </li> -->
@@ -93,7 +104,7 @@
         </div>
     </div>
 
-    
+
     <div class="home-sticky" id="content">
 
         <h2 class="home-sticky-title">Common Sign Language</h2>

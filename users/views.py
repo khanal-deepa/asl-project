@@ -66,7 +66,7 @@ def loginUser(request):
 
         if user is not None:
             login(request, user)
-            return redirect('index')
+            return redirect('home')
         else:
             messages.error(request, 'Invalid username or password')
 
